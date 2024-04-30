@@ -20,10 +20,11 @@ def csvToSortedList(fileName: str):
             #Crer le profil étudiant et le rajoute à la liste               
             student={'INE': studentINE, 'grade': studentGrade, 'wishList': studentWishList, 'givenSchool': None}
             studentList.append(student)
-    
+
     #Trie la liste en fonction des grades
     studentList.sort(key=lambda student: student['grade'], reverse=True)
     
+    #Ajoute le rang de chaque élève
     rang=1
     for student in studentList:
         student['Rang']=rang
@@ -43,3 +44,4 @@ def csvToEcole(fileName):
             #Crer le profil école et le rajoute à la liste               
             school={'name': schoolName, 'placesNumber': schoolPlaces, 'remainingPlaces': schoolPlaces}
             schoolList.append(school)
+    return schoolList

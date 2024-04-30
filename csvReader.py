@@ -23,6 +23,11 @@ def csvToSortedList(fileName: str):
     
     #Trie la liste en fonction des grades
     studentList.sort(key=lambda student: student['grade'], reverse=True)
+    
+    rang=1
+    for student in studentList:
+        student['Rang']=rang
+        rang+=1
     return studentList
 
 def csvToEcole(fileName):
